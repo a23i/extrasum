@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Авто-суммаризация</title>
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
+</head>
+<body>
+	<div class="content">
+		<form action="submit" id="textform" method="post">
+		<div class="summarizer">
+			<h1 class="title">
+				Автоматическое резюмирование текстов
+			</h1>
+			<div>
+				<p class="comment_form_field">
+					<label for="id_text">Текст:</label>
+				</p>
+					<textarea cols="80" rows="20" id="id_text" maxlength="10000" name="text" rows="10">{{ text }}</textarea>
+			</div>
+			<div>
+				<p class="comment_form_field">
+					<label for="id_sentences">Алгоритм сокращения:</label>
+				</p>
+				<select id="id_algo" name="algo" class="algo_selector">
+					<option>Text Rank</option>
+					<option>Lex Rank</option>
+				</select>
+			</div>
+			<div>
+				<p class="comment_form_field">
+					<label for="id_sentences">Количество предложений:</label>
+				</p>
+				<input id="id_sentences" min="1" name="sentences" type="number" value="5" class="selector" />
+			</div>
+			<input type="submit" value="Сократить" class="btn" id="submit_sum" />
+		</div>
+		</form>
+		<div class="result">
+			<p class="comment_form_field">
+				<label for="id_res">Резюме:</label>
+			</p>
+			<textarea cols="80" id="id_text" max_length="3000" name="result" rows="10" readonly>{{ summary }}</textarea>
+		</div>
+	<footer>
+		<a href="faq"><h3 class="title">F.A.Q.</h3></a>
+	</footer>
+	</div>
+</body>
+</html>

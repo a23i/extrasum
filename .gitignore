@@ -1,0 +1,5 @@
+# Byte-compiled
+__pycache__/
+
+# Dealing with macOS
+.DS_store
